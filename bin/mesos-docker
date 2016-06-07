@@ -109,10 +109,10 @@ class DockerExecutor(mesos.Executor):
     def registered(self, driver, executorInfo, frameworkInfo, slaveInfo):
         log.info('Registered with Mesos slave')
 
-    def reregistered(driver, slaveInfo):
+    def reregistered(self, driver, slaveInfo):
         log.info('Reregistered with Mesos slave')
 
-    def disconnected(driver):
+    def disconnected(self, driver):
         log.warning('Disconnected from Mesos slave')
 
     def launchTask(self, driver, task):
